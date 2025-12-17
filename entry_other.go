@@ -47,7 +47,7 @@ WantedBy=multi-user.target
 func (s Service) entryPoint(payload func(context.Context)) {
 	defer func() {
 		if x := recover(); x != nil {
-			s.logger.Fatalf("panic: %v\n%v", x, string(runtimeDebug.Stack()))
+			s.Logger.Fatalf("panic: %v\n%v", x, string(runtimeDebug.Stack()))
 		}
 	}()
 
